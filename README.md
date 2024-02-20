@@ -38,13 +38,16 @@ prototype font subsetter
 
 #### 下载路径
 ```
-
+https://ant.apache.org/
 ```
 
 #### 配置
+在电脑的环境变量中，配置当前的 ant 的程序的根路径，新增 `ANT_HOME` 
+在系统变量中，然后在 path 中新增 `%ANT_HOME%/bin `
 
 #### 调用
+在 java 文件下新开一个CMD, 使用 ant 命令进行打包
 
 #### 注意事项
-项目中采用 jdk 1.8 的版本，再 javadoc.xml 的配置文件中，如果有需要，可以修改打包的jdk 版本，通常版本号根据自己电脑中的JDK 版本的变化而变化。
+项目中采用 jdk 1.8 的版本，在 javadoc.xml 的配置文件中，如果有需要，可以修改打包的jdk 版本，通常版本号根据自己电脑中的JDK 版本的变化而变化。
 
