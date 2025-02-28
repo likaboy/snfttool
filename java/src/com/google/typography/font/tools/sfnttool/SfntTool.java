@@ -27,21 +27,11 @@ import com.google.typography.font.tools.subsetter.HintStripper;
 import com.google.typography.font.tools.subsetter.RenumberingSubsetter;
 import com.google.typography.font.tools.subsetter.Subsetter;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
+import java.io.*;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -58,7 +48,7 @@ public class SfntTool {
     private boolean mtx = false;
 
     private static final long SIZE_THRESHOLD = 2_048_000L;
-    private static final long BIG_FILE_SIZE_THRESHOLD = 32_768L;
+    private static final int BIG_FILE_SIZE_THRESHOLD = 16_384;
 
     public static void main(String[] args) throws IOException {
         SfntTool tool = new SfntTool();
@@ -74,28 +64,27 @@ public class SfntTool {
             }
 
             if (option != null) {
-                if (option.equals("help") || option.equals("?")) {
-                    printUsage();
-                    System.exit(0);
-                } else if (option.equals("b") || option.equals("bench")) {
-                    nIters = 10000;
-                } else if (option.equals("h") || option.equals("hints")) {
-                    tool.strip = true;
-                } else if (option.equals("s") || option.equals("string")) {
-                    File file = new File(args[i + 1]);
-                    tool.subsetString = readFileContents(file, StandardCharsets.UTF_8);
-                    i++;
-                    // tool.subsetString = args[i + 1];
-                    // i++;
-                } else if (option.equals("w") || option.equals("woff")) {
-                    tool.woff = true;
-                } else if (option.equals("e") || option.equals("eot")) {
-                    tool.eot = true;
-                } else if (option.equals("x") || option.equals("mtx")) {
-                    tool.mtx = true;
-                } else {
-                    printUsage();
-                    System.exit(1);
+                switch (option) {
+                    case "help", "?" -> {
+                        printUsage();
+                        System.exit(0);
+                    }
+                    case "b", "bench" -> nIters = 10000;
+                    case "h", "hints" -> tool.strip = true;
+                    case "s", "string" -> {
+                        File file = new File(args[i + 1]);
+                        tool.subsetString = readFileContents(file, StandardCharsets.UTF_8);
+                        i++;
+                        // tool.subsetString = args[i + 1];
+                        // i++;
+                    }
+                    case "w", "woff" -> tool.woff = true;
+                    case "e", "eot" -> tool.eot = true;
+                    case "x", "mtx" -> tool.mtx = true;
+                    default -> {
+                        printUsage();
+                        System.exit(1);
+                    }
                 }
             } else {
                 if (fontFile == null) {
@@ -119,7 +108,7 @@ public class SfntTool {
         }
     }
 
-    private static final void printUsage() {
+    private static void printUsage() {
         System.out.println("Subset [-?|-h|-help] [-b] [-s string] fontfile outfile");
         System.out.println("Prototype font subsetter");
         System.out.println("\t-?,-help\tprint this help information");
@@ -134,9 +123,7 @@ public class SfntTool {
     public void subsetFontFile(File fontFile, File outputFile, int nIters)
             throws IOException {
         FontFactory fontFactory = FontFactory.getInstance();
-        FileInputStream fis = null;
-        try {
-            fis = new FileInputStream(fontFile);
+        try (FileInputStream fis = new FileInputStream(fontFile)) {
             byte[] fontBytes = new byte[(int) fontFile.length()];
             fis.read(fontBytes);
             Font[] fontArray = null;
@@ -196,17 +183,11 @@ public class SfntTool {
                     fontFactory.serializeFont(newFont, fos);
                 }
             }
-        } finally {
-            if (fis != null) {
-                fis.close();
-            }
         }
     }
 
     /**
-     * 读取文件内容
-     * 分阶段读取
-     *
+     * read file contents into a string
      * @param file
      * @param charset
      * @return
@@ -220,10 +201,12 @@ public class SfntTool {
             content = Files.readString(path, charset);
         } else {
             StringBuilder stringBuilder = new StringBuilder((int) Math.min(file.length(), Integer.MAX_VALUE));
-            try (BufferedReader reader = Files.newBufferedReader(path, charset),BIG_FILE_SIZE_THRESHOLD) {
+            try (BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(Files.newInputStream(path), charset),
+                    BIG_FILE_SIZE_THRESHOLD)) {
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    stringBuilder.append(line)
+                    stringBuilder.append(line);
                 }
                 content = stringBuilder.toString();
             }

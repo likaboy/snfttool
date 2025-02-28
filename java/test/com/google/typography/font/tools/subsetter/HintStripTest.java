@@ -23,15 +23,10 @@ import com.google.typography.font.sfntly.table.core.CMap;
 import com.google.typography.font.sfntly.table.core.CMapTable;
 import com.google.typography.font.sfntly.table.core.HorizontalMetricsTable;
 import com.google.typography.font.sfntly.table.core.MaximumProfileTable;
-import com.google.typography.font.sfntly.table.truetype.CompositeGlyph;
-import com.google.typography.font.sfntly.table.truetype.Glyph;
+import com.google.typography.font.sfntly.table.truetype.*;
 import com.google.typography.font.sfntly.table.truetype.Glyph.GlyphType;
-import com.google.typography.font.sfntly.table.truetype.GlyphTable;
-import com.google.typography.font.sfntly.table.truetype.LocaTable;
-import com.google.typography.font.sfntly.table.truetype.SimpleGlyph;
 import com.google.typography.font.sfntly.testutils.TestFont.TestFontNames;
 import com.google.typography.font.sfntly.testutils.TestFontUtils;
-
 import junit.framework.TestCase;
 
 import java.io.File;

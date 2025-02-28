@@ -22,7 +22,6 @@ import com.google.typography.font.sfntly.Tag;
 import com.google.typography.font.sfntly.data.WritableFontData;
 import com.google.typography.font.sfntly.table.Table;
 import com.google.typography.font.sfntly.table.truetype.ControlValueTable;
-
 import junit.framework.TestCase;
 
 /**

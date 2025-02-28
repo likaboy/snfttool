@@ -23,12 +23,7 @@ import com.google.typography.font.sfntly.math.FontMath;
 import com.google.typography.font.sfntly.table.SubTable;
 import com.google.typography.font.sfntly.table.bitmap.EblcTable.Offset;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public final class BitmapSizeTable extends SubTable {
   // binary search would be faster but many fonts have index subtables that

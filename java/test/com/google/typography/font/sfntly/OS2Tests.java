@@ -22,7 +22,6 @@ import com.google.typography.font.sfntly.table.core.OS2Table.UnicodeRange;
 import com.google.typography.font.sfntly.testutils.TestFont;
 import com.google.typography.font.sfntly.testutils.TestFontUtils;
 import com.google.typography.font.sfntly.testutils.TestUtils;
-
 import junit.framework.TestCase;
 
 import java.io.File;

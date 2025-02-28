@@ -10,25 +10,14 @@ import com.google.typography.font.sfntly.Font.WindowsEncodingId;
 import com.google.typography.font.sfntly.Tag;
 import com.google.typography.font.sfntly.math.Fixed1616;
 import com.google.typography.font.sfntly.table.Table;
-import com.google.typography.font.sfntly.table.core.CMap;
-import com.google.typography.font.sfntly.table.core.CMapTable;
-import com.google.typography.font.sfntly.table.core.FontHeaderTable;
-import com.google.typography.font.sfntly.table.core.HorizontalHeaderTable;
-import com.google.typography.font.sfntly.table.core.MaximumProfileTable;
-import com.google.typography.font.sfntly.table.core.NameTable;
-import com.google.typography.font.sfntly.table.core.NameTable.MacintoshLanguageId;
-import com.google.typography.font.sfntly.table.core.NameTable.NameEntry;
-import com.google.typography.font.sfntly.table.core.NameTable.NameId;
-import com.google.typography.font.sfntly.table.core.NameTable.UnicodeLanguageId;
-import com.google.typography.font.sfntly.table.core.NameTable.WindowsLanguageId;
-import com.google.typography.font.sfntly.table.core.OS2Table;
+import com.google.typography.font.sfntly.table.core.*;
+import com.google.typography.font.sfntly.table.core.NameTable.*;
 import com.google.typography.font.sfntly.table.truetype.CompositeGlyph;
 import com.google.typography.font.sfntly.table.truetype.Glyph;
 import com.google.typography.font.sfntly.table.truetype.Glyph.GlyphType;
 import com.google.typography.font.sfntly.table.truetype.GlyphTable;
 import com.google.typography.font.sfntly.table.truetype.LocaTable;
 import com.google.typography.font.tools.fontinfo.DataDisplayTable.Align;
-
 import com.ibm.icu.impl.IllegalIcuArgumentException;
 import com.ibm.icu.lang.UCharacter;
 import com.ibm.icu.lang.UScript;
@@ -36,13 +25,7 @@ import com.ibm.icu.text.UnicodeSet;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * Class of static functions that return information about a given font

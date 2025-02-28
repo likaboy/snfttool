@@ -25,29 +25,13 @@ import com.google.typography.font.sfntly.math.FontMath;
 import com.google.typography.font.sfntly.table.FontDataTable;
 import com.google.typography.font.sfntly.table.Header;
 import com.google.typography.font.sfntly.table.Table;
-import com.google.typography.font.sfntly.table.core.CMapTable;
-import com.google.typography.font.sfntly.table.core.FontHeaderTable;
-import com.google.typography.font.sfntly.table.core.HorizontalDeviceMetricsTable;
-import com.google.typography.font.sfntly.table.core.HorizontalHeaderTable;
-import com.google.typography.font.sfntly.table.core.HorizontalMetricsTable;
-import com.google.typography.font.sfntly.table.core.MaximumProfileTable;
-import com.google.typography.font.sfntly.table.core.NameTable;
+import com.google.typography.font.sfntly.table.core.*;
 import com.google.typography.font.sfntly.table.truetype.LocaTable;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.logging.Logger;
 
 /**

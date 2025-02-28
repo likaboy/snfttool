@@ -5,7 +5,6 @@ import com.google.typography.font.sfntly.FontFactory;
 import com.google.typography.font.sfntly.Tag;
 import com.google.typography.font.sfntly.table.core.NameTable;
 import com.google.typography.font.sfntly.testutils.TestFont;
-
 import junit.framework.TestCase;
 
 import java.io.File;

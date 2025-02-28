@@ -19,7 +19,6 @@ package com.google.typography.font.sfntly;
 import com.google.typography.font.sfntly.table.core.HorizontalMetricsTable;
 import com.google.typography.font.sfntly.testutils.TestFont;
 import com.google.typography.font.sfntly.testutils.TestFontUtils;
-
 import junit.framework.TestCase;
 
 import java.io.File;

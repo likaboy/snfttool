@@ -17,16 +17,9 @@
 package com.google.typography.font.sfntly.testutils;
 
 import com.google.typography.font.sfntly.data.ReadableFontData;
-
 import com.ibm.icu.charset.CharsetICU;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.RandomAccessFile;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.channels.FileChannel;

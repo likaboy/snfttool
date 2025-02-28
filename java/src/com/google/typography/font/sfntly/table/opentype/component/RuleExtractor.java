@@ -1,48 +1,15 @@
 package com.google.typography.font.sfntly.table.opentype.component;
 
-import com.google.typography.font.sfntly.table.opentype.AlternateSubst;
-import com.google.typography.font.sfntly.table.opentype.ChainContextSubst;
-import com.google.typography.font.sfntly.table.opentype.ClassDefTable;
-import com.google.typography.font.sfntly.table.opentype.ContextSubst;
-import com.google.typography.font.sfntly.table.opentype.CoverageTable;
-import com.google.typography.font.sfntly.table.opentype.ExtensionSubst;
-import com.google.typography.font.sfntly.table.opentype.LigatureSubst;
-import com.google.typography.font.sfntly.table.opentype.LookupListTable;
-import com.google.typography.font.sfntly.table.opentype.LookupTable;
-import com.google.typography.font.sfntly.table.opentype.MultipleSubst;
-import com.google.typography.font.sfntly.table.opentype.ReverseChainSingleSubst;
-import com.google.typography.font.sfntly.table.opentype.SingleSubst;
-import com.google.typography.font.sfntly.table.opentype.SubstSubtable;
-import com.google.typography.font.sfntly.table.opentype.chaincontextsubst.ChainSubClassRule;
-import com.google.typography.font.sfntly.table.opentype.chaincontextsubst.ChainSubClassSet;
-import com.google.typography.font.sfntly.table.opentype.chaincontextsubst.ChainSubClassSetArray;
-import com.google.typography.font.sfntly.table.opentype.chaincontextsubst.ChainSubRule;
-import com.google.typography.font.sfntly.table.opentype.chaincontextsubst.ChainSubRuleSet;
-import com.google.typography.font.sfntly.table.opentype.chaincontextsubst.ChainSubRuleSetArray;
-import com.google.typography.font.sfntly.table.opentype.chaincontextsubst.CoverageArray;
-import com.google.typography.font.sfntly.table.opentype.chaincontextsubst.InnerArraysFmt3;
+import com.google.typography.font.sfntly.table.opentype.*;
+import com.google.typography.font.sfntly.table.opentype.chaincontextsubst.*;
 import com.google.typography.font.sfntly.table.opentype.classdef.InnerArrayFmt1;
-import com.google.typography.font.sfntly.table.opentype.contextsubst.SubClassRule;
-import com.google.typography.font.sfntly.table.opentype.contextsubst.SubClassSet;
-import com.google.typography.font.sfntly.table.opentype.contextsubst.SubClassSetArray;
-import com.google.typography.font.sfntly.table.opentype.contextsubst.SubRule;
-import com.google.typography.font.sfntly.table.opentype.contextsubst.SubRuleSet;
-import com.google.typography.font.sfntly.table.opentype.contextsubst.SubRuleSetArray;
+import com.google.typography.font.sfntly.table.opentype.contextsubst.*;
 import com.google.typography.font.sfntly.table.opentype.ligaturesubst.Ligature;
 import com.google.typography.font.sfntly.table.opentype.ligaturesubst.LigatureSet;
 import com.google.typography.font.sfntly.table.opentype.singlesubst.HeaderFmt1;
 import com.google.typography.font.sfntly.table.opentype.singlesubst.InnerArrayFmt2;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 class RuleExtractor {
   private static Set<Rule> extract(LigatureSubst table) {

@@ -3,13 +3,11 @@ package com.google.typography.font.sfntly.sample.sfview;
 import com.google.typography.font.sfntly.Font;
 import com.google.typography.font.sfntly.FontFactory;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
 
 public class SFView {
   public static void main(String[] args) throws IOException {

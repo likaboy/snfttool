@@ -19,11 +19,7 @@ package com.google.typography.font.tools.conversion.eot;
 import com.google.typography.font.sfntly.Font;
 import com.google.typography.font.sfntly.Tag;
 import com.google.typography.font.sfntly.data.ReadableFontData;
-import com.google.typography.font.sfntly.table.truetype.CompositeGlyph;
-import com.google.typography.font.sfntly.table.truetype.Glyph;
-import com.google.typography.font.sfntly.table.truetype.GlyphTable;
-import com.google.typography.font.sfntly.table.truetype.LocaTable;
-import com.google.typography.font.sfntly.table.truetype.SimpleGlyph;
+import com.google.typography.font.sfntly.table.truetype.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

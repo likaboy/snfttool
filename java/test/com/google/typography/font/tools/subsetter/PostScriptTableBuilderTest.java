@@ -20,7 +20,6 @@ import com.google.typography.font.sfntly.Font;
 import com.google.typography.font.sfntly.FontFactory;
 import com.google.typography.font.sfntly.Tag;
 import com.google.typography.font.sfntly.table.core.PostScriptTable;
-
 import junit.framework.TestCase;
 
 import java.util.ArrayList;

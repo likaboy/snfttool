@@ -17,7 +17,6 @@
 package com.google.typography.font.sfntly.data;
 
 import com.google.typography.font.sfntly.testutils.TestUtils;
-
 import junit.framework.TestCase;
 
 

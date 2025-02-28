@@ -25,13 +25,7 @@ import com.google.typography.font.sfntly.table.core.CMapTable;
 
 import java.io.IOException;
 import java.security.InvalidParameterException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * sfntly sample code demonstrating subsetting. Work in progress.

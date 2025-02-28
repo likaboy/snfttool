@@ -2,11 +2,7 @@ package com.google.typography.font.sfntly.table.opentype.component;
 
 import com.google.typography.font.sfntly.table.core.PostScriptTable;
 
-import java.util.BitSet;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class GlyphGroup extends BitSet implements Iterable<Integer> {
   private static final long serialVersionUID = 1L;

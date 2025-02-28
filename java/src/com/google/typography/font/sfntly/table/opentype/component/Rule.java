@@ -5,21 +5,9 @@ import com.google.typography.font.sfntly.Tag;
 import com.google.typography.font.sfntly.table.core.CMap;
 import com.google.typography.font.sfntly.table.core.CMapTable;
 import com.google.typography.font.sfntly.table.core.PostScriptTable;
-import com.google.typography.font.sfntly.table.opentype.FeatureListTable;
-import com.google.typography.font.sfntly.table.opentype.GSubTable;
-import com.google.typography.font.sfntly.table.opentype.LangSysTable;
-import com.google.typography.font.sfntly.table.opentype.LookupListTable;
-import com.google.typography.font.sfntly.table.opentype.ScriptListTable;
-import com.google.typography.font.sfntly.table.opentype.ScriptTable;
+import com.google.typography.font.sfntly.table.opentype.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Rule {
   private final RuleSegment backtrack;

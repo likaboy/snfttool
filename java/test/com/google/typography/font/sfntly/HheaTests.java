@@ -17,7 +17,6 @@
 package com.google.typography.font.sfntly;
 
 import com.google.typography.font.sfntly.table.core.HorizontalHeaderTable;
-
 import junit.framework.TestCase;
 
 
