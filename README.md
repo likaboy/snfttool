@@ -3,8 +3,9 @@
 ## fock in `https://github.com/googlefonts/sfntly`
 
 在TTF字体中提取想要的文字，让字体文件仅包含需要的文字
-读取一个TTF字体文件，当文件小于 2M ，采用管道读取，大于2M采用 BufferedReader 读取
-update `com.google.typography.font.tools.sfnttool.SfntTool.readFileContents` method. 
+读取一个TTF字体文件，当文件小于 2M ，采用管道读取，大于2M采用 BufferedReader 读取.
+
+update `com.google.typography.font.tools.sfnttool.SfntTool.readFileContents（）`.    
 
 【使用】
 1. 确保你的电脑已经安装了Java环境（能运行Java命令），这是必须的。
